@@ -6,18 +6,44 @@ let state = {
 }
 
 let plates = new Array(10);
-let plateInterval = 4000;
+let plateInterval = 3000;
 
 let score = 0;
-let lives = 3;
+let lives = 5;
 let level = 1;
 let levelCounter = 0;
+
+// let questions = {
+//   level1: {
+//     question1: {
+//       title: 'Chinese Circus v. American Circus',
+//       question: 'What is the name of the Chinese village best known for acrobatics, where everyone, including old men and women tumble down the streets?'
+//       optionA: 'Wuqiao',
+//       optionB: 'Hebei',
+//       optionC: 'Huaxi',
+//       optionD: 'Wuhan',
+//       answer: 'optionA'
+//     },
+//   },
+//   level2: {
+
+//   },
+//   level3: {
+
+//   },
+//   level4: {
+
+//   },
+//   level5: {
+
+//   }
+// };
 
 $(document).ready(function(){
   console.log( "ready!" );
 
   function right() {
-    $('#unicycler').velocity({
+    $('#unicycler').velocity({ //Following recommendations from John Bell, I am using Velocity.JS but the animation required is so brief that I am not making use of the special features of VelocityJS here.
       left: '+=10px'
     }, 0.2);
   };
@@ -42,6 +68,7 @@ $(document).ready(function(){
     }
   });
 
+  $('#level').text('Level: ' + level);
   $('#score').text('Score: ' + score);
   $('#lives').text('Lives: ' + lives);
 
@@ -70,12 +97,13 @@ $(document).ready(function(){
       // Check if the score is below the number required to go on to next level.
       // If the score is high enough to clear the level, then remove plates from
       //stage and transition to the next level.
-      if (levelCounter >= 20) {
+      if (levelCounter >= 5) {
         level++;
         levelCounter = 0;
         plateInterval -= 1000; //Speed up the rate of falling plates in next level.
         $('.plates').remove();
         alert('next Level');
+        $('#level').text('Level: ' + level);
         $('#unicycler').css('height', (parseInt($('#unicycler').css('height', '100px'))));
         clearInterval(animate);
       }
@@ -86,6 +114,8 @@ $(document).ready(function(){
       }
       else if ((Math.abs(plateBottom - unicyclerHeight) <= 25) && (Math.abs(plateX - unicyclerX) <= 5) ){ //Range of acceptable target.
         console.log('catch');
+        modalQuestion();
+        // pauseAnimation();
         newPlate.remove();
         $('#unicycler').css('height', (parseInt($('#unicycler').css('height'))+10)+'px'); // Unicycler adds plate to head.
 // TO DO:
@@ -110,20 +140,19 @@ $(document).ready(function(){
     }, 200);
   };
 
-  // function createQuestion(x) {
-  //   let newPlate = $(`<div id = 'question'></div>`);
-  //   $('#stage').append(newPlate);
-  //   newPlate.css('left', x+'px');
-  //   newPlate.velocity({
-  //     top: '+= 380px'
-  //   }, 'easeIn');
-  //   };
-  // });
+  function modalQuestion() {
+    $('#questionModal').css('display', 'block');
+    // $('#questionTitle').innerHTML = questions.level1.question1.title;
+  }
+
+  function pauseAnimation() {
+    $('.plates').clearQueue();
+    $('.plates').stop();
+  }
 
   function newPlate() {
     let x = getPlateX();
     createPlate(x);
-    console.log(id);
     console.log(x);
   };
 
@@ -132,34 +161,8 @@ $(document).ready(function(){
   // function newQuestion() {
   //   let x = getPlateX();
   //   createQuestion(x);
-  //   let animate = setInterval(function() {
-  //     let plateBottom = parseInt(newPlate.css('top')) + 10;
-  //     let plateX = parseInt(newPlate.css('left'));
-  //     let unicyclerHeight = parseInt($('#unicycler').css('top'));
-  //     let unicyclerX = parseInt($('#unicycler').css('left'));
-
-  //     if ((Math.abs(plateBottom - unicyclerHeight) <= 25) && (Math.abs(plateX - unicyclerX) <= 5) ){
-  //       console.log('question');
-  //       $('#unicycler').css('height', (parseInt($('#unicycler').css('height'))+10)+'px');
-  //     }
-  //     else if (plateBottom >= 400) {
-  //       console.log('break');
-  //       lives--;
-  //       $('#lives').text('Lives: ' + lives);
-  //       clearInterval(animate);
-  //     }
-  //     else {
-  //       console.log('scrolling down');
-  //       newPlate.velocity({
-  //         top: '+= 20px'
-  //       }, 'linear');
-  //     }
-  //   }, 200);
   // };
 
   // setInterval(newQuestion, 10000);
 
 });
-
-
-
