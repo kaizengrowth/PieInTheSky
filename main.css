@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  margin-top: 1em;
+}
+
+h1 {
+  font-size: 32;
+  text-align: center;
+}
+
+#points_container {
+  text-align: center;
+  padding: 1em;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+#stage {
+  width: 480px;
+  margin: auto;
+  height: 400px;
+  background-color: lightgray;
+  position: relative;
+  overflow: hidden;
+}
+
+#unicycler {
+  width: 50px;
+  height: 100px;
+  bottom: 0;
+  background-color: green;
+  position: absolute;
+}
+
+.plates {
+  width: 50px;
+  height: 20px;
+  background-color: yellow;
+  position: absolute;
+}
+
+#question {
+  width: 50px;
+  height: 20px;
+  background-color: red;
+  position: absolute;
+}
