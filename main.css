@@ -69,3 +69,7 @@ h1 {
   font-size: 32px;
   opacity: 1;
 }
+
+button {
+  margin: 15px;
+}
