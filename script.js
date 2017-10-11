@@ -7,7 +7,7 @@ let state = {
 }
 
 let plates = new Array(10);
-let plateInterval = 4000;
+let plateInterval = 5000;
 
 let score = 0;
 let lives = 3;
@@ -79,7 +79,7 @@ $(document).ready(function(){
       // Check if the score is below the number required to go on to next level.
       // If the score is high enough to clear the level, then remove plates from
       //stage and transition to the next level.
-      if (levelCounter >= 20) {
+      if (levelCounter >= 5) {
         level++;
         levelCounter = 0;
         plateInterval -= 1000; //Speed up the rate of falling plates in next level.
@@ -97,7 +97,7 @@ $(document).ready(function(){
       else if ((Math.abs(plateBottom - unicyclistHeight) <= 25) && (Math.abs(plateX - unicyclistX) <= 5) ){ //Range of acceptable target.
         console.log('catch');
         newPlate.remove();
-        $('#unicyclist').css('height', (parseInt($('#unicyclist').css('height'))+10)+'px'); // Unicyclist adds plate to head.
+        $('#unicyclist').css('height', (parseInt($('#unicyclist').css('height'))+30)+'px'); // Unicyclist adds plate to head.
 // TO DO:
 // Make unicyclist add plates rather than height.
         score++; // Increase the score by one plate.

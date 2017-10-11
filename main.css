@@ -5,6 +5,13 @@
 body {
   font-family: sans-serif;
   margin-top: 1em;
+  background-color: white;
+  color: darkgray;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
 }
 
 h1 {
@@ -19,27 +26,50 @@ h1 {
   font-weight: 900;
 }
 
+#questions_container {
+  flex: 1;
+  width: 300px;
+  height: 350px;
+  background-color: #A64253;
+  margin: 25px;
+  padding: 20px;
+  box-shadow: -20px 10px 10px gray;
+  border: 1px dotted black;
+  border-radius: 25px;
+  color: white;
+}
+
 #stage {
   width: 480px;
   margin: auto;
   height: 400px;
-  background-color: lightgray;
+  background-image: url('images/level1.jpg');
+  background-size: cover;
   position: relative;
   overflow: hidden;
+  flex: 1.5;
 }
 
 #unicyclist {
   width: 50px;
-  height: 100px;
+  height: 150px;
   bottom: 0;
-  background-color: green;
+  /*background-color: green;*/
   position: absolute;
+  overflow: hidden;
+}
+
+#unicyclist img {
+  width: 100%;
+  margin: auto;
 }
 
 .plates {
   width: 50px;
-  height: 20px;
-  background-color: yellow;
+  height: 40px;
+  /*background-color: yellow;*/
+  background-image: url('images/plate.png');
+  background-size: cover;
   position: absolute;
 }
 
@@ -48,4 +78,17 @@ h1 {
   height: 20px;
   background-color: red;
   position: absolute;
+}
+
+#facts_container {
+  flex: 1;
+  width: 300px;
+  height: 350px;
+  background-color: #FCF0CC;
+  margin: 25px;
+  box-shadow: 10px 20px 10px gray;
+  border: 1px dotted black;
+  border-radius: 25px;
+  color: brown;
+  padding: 20px;
 }
