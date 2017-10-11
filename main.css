@@ -3,10 +3,11 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Tillana', cursive;
   margin-top: 1em;
-  background-color: white;
-  color: darkgray;
+  background-color: black;
+  background-image: url('images/background_lights.jpg');
+  color: white;
 }
 
 main {
@@ -26,17 +27,35 @@ h1 {
   font-weight: 900;
 }
 
+#score, #lives {
+  color: yellow;
+}
+
 #questions_container {
   flex: 1;
   width: 300px;
   height: 350px;
-  background-color: #A64253;
+  background-color: #fc3ea4;
   margin: 25px;
   padding: 20px;
-  box-shadow: -20px 10px 10px gray;
   border: 1px dotted black;
   border-radius: 25px;
   color: white;
+}
+
+#questions_container p {
+  font-family: 'Pangolin', cursive;
+}
+
+#bowl {
+  width: auto;
+  height: auto;
+  border-radius: 1em 1em 10em 10em;
+  border: 7px solid silver;
+  gradient(#ddd,#999) 1em 0.5em;
+  background: radial-gradient(#ddd,#999);
+  box-shadow: 0 0.1em 0.2em ;
+  overflow: hidden;
 }
 
 #stage {
@@ -46,7 +65,6 @@ h1 {
   background-image: url('images/level1.jpg');
   background-size: cover;
   position: relative;
-  overflow: hidden;
   flex: 1.5;
 }
 
@@ -56,6 +74,7 @@ h1 {
   bottom: 0;
   /*background-color: green;*/
   position: absolute;
+  left: 200px;
   overflow: hidden;
 }
 
@@ -73,22 +92,26 @@ h1 {
   position: absolute;
 }
 
-#question {
-  width: 50px;
-  height: 20px;
-  background-color: red;
+button {
+  width: 60px;
+  height: 45px;
+  background-color: yellow;
+  font-size: 13px;
+  border-radius: 10px;
+  color: black;
   position: absolute;
+  margin-left: -40px;
 }
 
 #facts_container {
   flex: 1;
   width: 300px;
   height: 350px;
-  background-color: #FCF0CC;
+  background-color: #17c62f;
   margin: 25px;
-  box-shadow: 10px 20px 10px gray;
-  border: 1px dotted black;
+  border: 1px dotted white;
   border-radius: 25px;
-  color: brown;
+  color: white;
   padding: 20px;
+  font-family: 'Pangolin', cursive;
 }

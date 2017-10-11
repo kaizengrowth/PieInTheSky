@@ -1,0 +1,40 @@
+#fc3ea4  pink
+#17c62f green
+#fbfd35  yellow
+#2982FA  blue
+#831cb7  purple
+
+
+function doStuff() {
+  // animate things
+}
+
+let intervals = [];
+let animate = setInterval(doStuff, 20);
+intervals.push(animate);
+
+// let questions = {
+//   level1: {
+//     question1: {
+//       title: 'Chinese Circus v. American Circus',
+//       question: 'What is the name of the Chinese village best known for acrobatics, where everyone, including old men and women tumble down the streets?'
+//       optionA: 'Wuqiao',
+//       optionB: 'Hebei',
+//       optionC: 'Huaxi',
+//       optionD: 'Wuhan',
+//       answer: 'optionA'
+//     },
+//   },
+//   level2: {
+
+//   },
+//   level3: {
+
+//   },
+//   level4: {
+
+//   },
+//   level5: {
+
+//   }
+// };

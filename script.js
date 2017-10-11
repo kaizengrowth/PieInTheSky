@@ -10,7 +10,7 @@ let plates = new Array(10);
 let plateInterval = 5000;
 
 let score = 0;
-let lives = 3;
+let lives = 10;
 let level = 1;
 let levelCounter = 0;
 
@@ -41,13 +41,13 @@ $(document).ready(function(){
         right();
         break;
       default:
-        alert('Press arrow keys to move unicycle juggler.');
+        // alert('Press arrow keys to move unicycle juggler.');
     }
   });
 
   //******** Display Game Stats ********//
 
-  $('#level').text('Level: ' + level);
+  $('#level').text('Level ' + level);
   $('#score').text('Score: ' + score);
   $('#lives').text('Lives: ' + lives);
 
@@ -56,7 +56,7 @@ $(document).ready(function(){
 
   function getPlateX() {
     let position = Math.floor(Math.random() * 5);
-    let x = position * 10;
+    let x = position * 8;
     return x;
   };
 
@@ -97,6 +97,7 @@ $(document).ready(function(){
       else if ((Math.abs(plateBottom - unicyclistHeight) <= 25) && (Math.abs(plateX - unicyclistX) <= 5) ){ //Range of acceptable target.
         console.log('catch');
         newPlate.remove();
+        // $('#catch').play();
         $('#unicyclist').css('height', (parseInt($('#unicyclist').css('height'))+30)+'px'); // Unicyclist adds plate to head.
 // TO DO:
 // Make unicyclist add plates rather than height.
