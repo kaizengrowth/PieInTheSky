@@ -1,5 +1,6 @@
+//******** Game Data ********//
 let state = {
-  unicycler: {
+  unicyclist: {
     x: 0,
     height: 20
   }
@@ -13,17 +14,19 @@ let lives = 3;
 let level = 1;
 let levelCounter = 0;
 
+//******** Keyboard Controller ********//
+
 $(document).ready(function(){
   console.log( "ready!" );
 
   function right() {
-    $('#unicycler').velocity({
+    $('#unicyclist').velocity({
       left: '+=10px'
     }, 0.2);
   };
 
   function left() {
-    $('#unicycler').velocity({
+    $('#unicyclist').velocity({
       left: '-=10px'
     }, 0.2);
   };
@@ -42,8 +45,14 @@ $(document).ready(function(){
     }
   });
 
+  //******** Display Game Stats ********//
+
+  $('#level').text('Level: ' + level);
   $('#score').text('Score: ' + score);
   $('#lives').text('Lives: ' + lives);
+
+
+  //******** Create New Plates ********//
 
   function getPlateX() {
     let position = Math.floor(Math.random() * 5);
@@ -64,8 +73,8 @@ $(document).ready(function(){
     let animate = setInterval(function() {
       let plateBottom = parseInt(newPlate.css('top')) + 10;
       let plateX = parseInt(newPlate.css('left'));
-      let unicyclerHeight = parseInt($('#unicycler').css('top'));
-      let unicyclerX = parseInt($('#unicycler').css('left'));
+      let unicyclistHeight = parseInt($('#unicyclist').css('top'));
+      let unicyclistX = parseInt($('#unicyclist').css('left'));
 
       // Check if the score is below the number required to go on to next level.
       // If the score is high enough to clear the level, then remove plates from
@@ -76,20 +85,21 @@ $(document).ready(function(){
         plateInterval -= 1000; //Speed up the rate of falling plates in next level.
         $('.plates').remove();
         alert('next Level');
-        $('#unicycler').css('height', (parseInt($('#unicycler').css('height', '100px'))));
+        $('#level').text('Level: ' + level);
+        $('#unicyclist').css('height', (parseInt($('#unicyclist').css('height', '100px'))));
         clearInterval(animate);
       }
       else if (lives <= 0) {
         console.log ('game over!');
         $('.plates').remove();
-        $('#unicycler').remove();
+        $('#unicyclist').remove();
       }
-      else if ((Math.abs(plateBottom - unicyclerHeight) <= 25) && (Math.abs(plateX - unicyclerX) <= 5) ){ //Range of acceptable target.
+      else if ((Math.abs(plateBottom - unicyclistHeight) <= 25) && (Math.abs(plateX - unicyclistX) <= 5) ){ //Range of acceptable target.
         console.log('catch');
         newPlate.remove();
-        $('#unicycler').css('height', (parseInt($('#unicycler').css('height'))+10)+'px'); // Unicycler adds plate to head.
+        $('#unicyclist').css('height', (parseInt($('#unicyclist').css('height'))+10)+'px'); // Unicyclist adds plate to head.
 // TO DO:
-// Make unicycler add plates rather than height.
+// Make unicyclist add plates rather than height.
         score++; // Increase the score by one plate.
         levelCounter++; // Increase the levelCounter (it takes 20 plates to clear each level.)
         $('#score').text('Score: ' + score); // Update score on window.
@@ -110,16 +120,6 @@ $(document).ready(function(){
     }, 200);
   };
 
-  // function createQuestion(x) {
-  //   let newPlate = $(`<div id = 'question'></div>`);
-  //   $('#stage').append(newPlate);
-  //   newPlate.css('left', x+'px');
-  //   newPlate.velocity({
-  //     top: '+= 380px'
-  //   }, 'easeIn');
-  //   };
-  // });
-
   function newPlate() {
     let x = getPlateX();
     createPlate(x);
@@ -128,36 +128,6 @@ $(document).ready(function(){
   };
 
   setInterval(newPlate, plateInterval);
-
-  // function newQuestion() {
-  //   let x = getPlateX();
-  //   createQuestion(x);
-  //   let animate = setInterval(function() {
-  //     let plateBottom = parseInt(newPlate.css('top')) + 10;
-  //     let plateX = parseInt(newPlate.css('left'));
-  //     let unicyclerHeight = parseInt($('#unicycler').css('top'));
-  //     let unicyclerX = parseInt($('#unicycler').css('left'));
-
-  //     if ((Math.abs(plateBottom - unicyclerHeight) <= 25) && (Math.abs(plateX - unicyclerX) <= 5) ){
-  //       console.log('question');
-  //       $('#unicycler').css('height', (parseInt($('#unicycler').css('height'))+10)+'px');
-  //     }
-  //     else if (plateBottom >= 400) {
-  //       console.log('break');
-  //       lives--;
-  //       $('#lives').text('Lives: ' + lives);
-  //       clearInterval(animate);
-  //     }
-  //     else {
-  //       console.log('scrolling down');
-  //       newPlate.velocity({
-  //         top: '+= 20px'
-  //       }, 'linear');
-  //     }
-  //   }, 200);
-  // };
-
-  // setInterval(newQuestion, 10000);
 
 });
 
