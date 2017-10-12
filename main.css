@@ -196,4 +196,6 @@ button {
 #game {
   margin-top: 100px;
   width: 150px;
+  font-family: 'julee', cursive;
+  font-size: 30px;
 }
