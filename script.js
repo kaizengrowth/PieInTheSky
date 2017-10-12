@@ -192,6 +192,7 @@ $(document).ready(function(){
         $('.plates').remove();
         $('#level').text('Level ' + level);
         $('#levelTitle').text(levels[lNum].title);
+        $('#stage').css('background-image', 'url(' + levels[lNum].background + ')');
         $('#lives').text('Lives: ' + lives);
         $('#unicyclist').css('height', (parseInt($('#unicyclist').css('height', '150px'))));
         clearInterval(animate);
