@@ -29,7 +29,7 @@ h1 {
   font-weight: 900;
 }
 
-#score, #lives {
+#score, #lives, #rightAnswers {
   color: yellow;
   font-family: 'Pangolin', cursive;
 }

@@ -15,6 +15,7 @@
   <div id = 'points_container'>
     <div id = 'score'></div>
     <div id = 'lives'></div>
+    <div id = 'rightAnswers'></div>
     <div id = 'alert'></div>
   </div>
 
@@ -101,7 +102,9 @@
       $('#alert').addClass('correct');
       $('#alert.correct').css('display', 'block');
       score +=5;
+      rightAnswers++;
       qNum ++;
+      $('#rightAnswers').text('Answers: ' + rightAnswers);
       displayAnswer();
     }
     else {

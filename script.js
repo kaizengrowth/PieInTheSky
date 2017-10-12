@@ -3,6 +3,7 @@ let plates = new Array(10);
 let plateInterval = 5000;
 let score = 0;
 let lives = 5;
+let rightAnswers = 0;
 let level = 1;
 let levelCounter = 0;
 let qNum = 0;
@@ -103,6 +104,7 @@ $(document).ready(function(){
   $('#level').text('Level ' + level);
   $('#score').text('Score: ' + score);
   $('#lives').text('Lives: ' + lives);
+  $('#rightAnswers').text('Answers: ' + rightAnswers);
 
 
   //******** Create New Plates ********//
@@ -135,11 +137,12 @@ $(document).ready(function(){
       // If the score is high enough to clear the level, then remove plates from
       //stage and transition to the next level.
       if (level > 4) {
+        $('level').detach();
+        clearInterval(animate);
         winGame.play();
         $('#alert').addClass('winGame');
         $('#alert.winGame').css('display', 'block');
-        clearInterval(animate);
-        $('#restart').show().delay(5000).fadeOut(1500, function(){
+        $('#restart').show().delay(2000).fadeOut(1500, function(){
           location.reload();
         });
         $('#restart').click(function(){
@@ -149,7 +152,7 @@ $(document).ready(function(){
 
 //******** Next Level ********//
 
-      else if ((levelCounter >= 7) && (level < 5)) {
+      else if ((levelCounter >= 7) && (level <= 4)) {
         level++;
         lives+=2;
         levelCounter = 0;
