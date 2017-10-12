@@ -69,17 +69,29 @@ $(document).ready(function(){
   };
 
   document.addEventListener("keydown", function(event) {
-    var x = event.keyCode;
-    switch (x) {
+    let e = event.keyCode;
+    switch (e) {
       case(37):
         left();
         break;
       case(39):
         right();
         break;
-      // case(35):  //Trying to focus on a radio button with a key event.
-      //   a();
-      //   break;
+      case(65):
+        $('#A').prop('checked', true);
+        break;
+      case(66):
+        $('#B').prop('checked', true);
+        break;
+      case(67):
+        $('#C').prop('checked', true);
+        break;
+      case(68):
+        $('#D').prop('checked', true);
+        break;
+      case(13):
+        checkAnswer();
+        break;
       // default:
         // alert('Press arrow keys to move unicycle juggler.');
     }
@@ -126,11 +138,18 @@ $(document).ready(function(){
         winGame.play();
         $('#alert').addClass('winGame');
         $('#alert.winGame').css('display', 'block');
+        clearInterval(animate);
+        $('#restart').show().delay(5000).fadeOut(1500, function(){
+          location.reload();
+        });
+        $('#restart').click(function(){
+          location.reload();
+        });
       }
 
 //******** Next Level ********//
 
-      else if (levelCounter >= 7) {
+      else if ((levelCounter >= 7) && (level < 5)) {
         level++;
         lives+=2;
         levelCounter = 0;
