@@ -77,6 +77,36 @@ let questions = [
     answer: 'd',
     answer_text: 'The bottom 117milion Americans are making an average of $16,200 per year before taxes',
     answer_image: 'images/income_collapse.jpg'
+  },
+  q5 = {
+    q: 'How many people died during Maos Great Leap Forward in China?',
+    a: '5 million',
+    b: '25 million',
+    c: '45 million',
+    d: '60 millioin',
+    answer: 'c',
+    answer_text: 'At least 45 million people died unnecessary deaths during Chinas Great Leap Forward from 1958 to 1962, including 2.5 million tortured or summarily killed',
+    answer_image: 'images/great_leap_forward.jpg'
+  },
+  q6 = {
+    q: 'Do blue states or red states have more Federal welfare recipients?',
+    a: 'Blue states',
+    b: 'Red states',
+    c: 'Both equally',
+    d: 'Welcare? That is socialist. Go to Canada.',
+    answer: 'b',
+    answer_text: 'While Republicans claim to be against welfare and the redistribution of wealth; in reality, conservative states are the biggest recipients of federal tax dollars, while progressive states tend to contribute the most taxes for public assistance.',
+    answer_image: 'images/red_blue_states.jpg'
+  },
+  q7 = {
+    q: 'What is the expenditure per student in Riverdale versus the South Bronx?',
+    a: 'About 1 to 1',
+    b: 'About 2 to 1',
+    c: 'Between 2 and 3 to 1',
+    d: 'About 3 and 4 to 1',
+    answer: 'c',
+    answer_text: 'In the South/East Bronx, the yearly expenditure per student is about $5500, whereas in wealthier parts of North Bronx (Riverdale), the expenditure is $11,000 to $15,000 per student per year.',
+    answer_image: 'images/bronx_education_inequality.jpg'
   }
 ];
 
