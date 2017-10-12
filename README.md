@@ -64,11 +64,15 @@ What is [Pie in the Sky]? A basic game of juggling plates while riding a unicycl
 
 This game doubles as a portfolio item, for my “About Me” page. Inspired by Robby Leonardi’s infamous portfolio: http://www.rleonardi.com/interactive-resume/
 
+---
+
 ### Wireframe
 
 Initial thoughts on game structure Collision detection on plates trigger target window (plate/pie) to display with facts and statistics. Catch all the plates to win a level. Dropping 3 plates results in loss/restart. If you catch a dirty plate called “cynicism,” you have to answer a series of questions to “wash the dish” and convert it to practical optimism.
 
 Sometimes you catch a sparkling plate called “optimism b.s.” which is a fake dish full of dangerous fake glow that can explode in your face and smear the screen with crap. You have to “wash the dish” by answering a question to convert it to balanced analysis.
+
+---
 
 ### Backgrounds: 
 
@@ -92,7 +96,11 @@ Sometimes you catch a sparkling plate called “optimism b.s.” which is a fake
 
 ##### e) Digital Privacy Rights in Berlin: Feminist digital activism, creating digital security kits for sex workers and political radicals in China, TOR hacktivism f) Civic Tech & Public Policy in Toronto: NYU public policy, back to the empirical economics & statistics approach, Ontario Provincial Directorate for Women’s Rights, policy research, cyncism and optimism in balance
 
-### Phases of Completion: STAGE ONE: Understanding collision detection and proof of concept with div’s. Unicycler moves left and right with key input. Plates are sliding down vertically in container. Unicycler can “catch” plate and it adds to the stack on character’s head.
+---
+
+### Phases of Completion: 
+
+##### STAGE ONE: Understanding collision detection and proof of concept with div’s. Unicycler moves left and right with key input. Plates are sliding down vertically in container. Unicycler can “catch” plate and it adds to the stack on character’s head.
 
 ##### STAGE TWO: Target window on collision event: when unicycler “catches” plate, it changes the image in a target “pie” window.
 
@@ -106,6 +114,7 @@ Sometimes you catch a sparkling plate called “optimism b.s.” which is a fake
 
 #####_STAGE SEVEN:_ Page load, single page application logic, actually getting the game to work.
 
+---
 
 ## Links and Resources (Anything you've looked up so far or are thinking about using.)
 
