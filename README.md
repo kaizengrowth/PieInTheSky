@@ -100,13 +100,14 @@ Sometimes you catch a sparkling plate called “optimism b.s.” which is a fake
 
 ##### STAGE FOUR: Quiz load - when unicycler catches a “over-cynicism” or “over-optimism” plate, the quiz shows up with a timer, and the cycler has only a set amount of time to answer the question correctly. Correct answer may add new “lives” and incorrect answer may take away a life.
 
-STAGE FIVE: After testing proof of concept, generate all images, including background images, quiz questions, statistics / pie charts.
+_STAGE FIVE:_ After testing proof of concept, generate all images, including background images, quiz questions, statistics / pie charts.
 
-STAGE SIX: Put the images together with the functionality. Make all the buttons work.
+_STAGE SIX:_ Put the images together with the functionality. Make all the buttons work.
 
-STAGE SEVEN: Page load, single page application logic, actually getting the game to work.
+_STAGE SEVEN:_ Page load, single page application logic, actually getting the game to work.
 
-Links and Resources (Anything you've looked up so far or are thinking about using.)
+
+**Links and Resources (Anything you've looked up so far or are thinking about using.)
 
 Collision Detection https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
 
