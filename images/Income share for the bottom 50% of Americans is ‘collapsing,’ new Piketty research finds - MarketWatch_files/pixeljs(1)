@@ -1,0 +1,20 @@
+
+(function() {
+var ref = encodeURIComponent((parent !== window) ? document.referrer : document.location);
+
+
+
+var r = new XMLHttpRequest();
+r.withCredentials = true;
+var s ="r=" + ref;
+if (!(typeof dianomi_tag_params_0x105674F6AF3111E7A921223DFD49C118 === "undefined")) {
+	for (var property in dianomi_tag_params_0x105674F6AF3111E7A921223DFD49C118) {
+		if (dianomi_tag_params_0x105674F6AF3111E7A921223DFD49C118.hasOwnProperty(property)) {
+			s += "&" + property + "=" + encodeURIComponent(dianomi_tag_params_0x105674F6AF3111E7A921223DFD49C118[property]);
+		}
+	}
+}
+
+r.open("GET", location.protocol + "//data.dianomi.com/frontend/pixel?" + s, true);
+r.send();
+})();

@@ -1,0 +1,6 @@
+/**
+ * 201707NpcdOlaRefresh - An HTML banner
+ * @version v1.0.0
+ * @date 8-1-2017 at 16:20:57
+ */
+params=product;var xmlURL="https://www.ally.com/apps/global/xml/rates.xml",rateValue=[],parseRates=function(){var e=new XMLHttpRequest;try{e.open("GET",xmlURL),e.timeout=5e3,!window.ActiveXObject&&"ActiveXObject"in window&&(e.responseType="msxml-document"),e.send(null),e.onreadystatechange=function(){if(4==e.readyState&&200==e.status&&null!=e.responseXML)for(var t=e.responseXML,a=0;a<params.length;a++){var n;if(n=t.evaluate?t.evaluate("//product/term[@id='"+params[a].termId+"']/rate[@min='"+params[a].min+"' and @max='"+params[a].max+"']/apy/text()",t,null,0,null).iterateNext():t.selectNodes("//product/term[@id='"+params[a].termId+"']/rate[@min='"+params[a].min+"' and @max='"+params[a].max+"']/apy/text()")[0],null==n)break;t.evaluate?0!=n.textContent.length&&-1!=n.textContent.indexOf(".")&&(rateValue.push(n.textContent),window.console&&console.log&&void 0):0!=n.text.length&&-1!=n.text.indexOf(".")&&(rateValue.push(n.text),window.console&&console.log&&void 0)}}}catch(t){window.console&&console.error&&void 0}};

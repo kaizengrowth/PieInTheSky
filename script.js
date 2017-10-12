@@ -46,7 +46,7 @@ let questions = [
     d: 'Neither country has any people living in poverty.',
     answer: 'a',
     answer_text: 'U.S. has higher poverty rate (15.1%) than China (13.4% povery rate)',
-    answer_image: 'images/plate.png',
+    answer_image: 'images/us_wealth_distribution.jpg',
   },
   q2 = {
     q: 'Which country has a higher rate of population growth?',
@@ -56,7 +56,7 @@ let questions = [
     d: 'Impossible to tell',
     answer: 'a',
     answer_text: "U.S. has a higher population growth rate (0.899%) than China (0.481%)",
-    answer_image: ''
+    answer_image: 'images/population_growth.gif'
   },
   q3 = {
     q: 'Which country has a higher rate of inequality?',
@@ -66,7 +66,7 @@ let questions = [
     d: 'Impossible to tell',
     answer: 'b',
     answer_text: 'USA has a higher rate of inequality than China. However, the income of the bottom 50% in the U.S. have stagnated and even went down in the US since 1978, whereas in China, the bottom half are experiencing 400% income growth.',
-    answer_image: ''
+    answer_image: 'images/gini_coefficient_USAPRC.jpg'
   },
   q4 = {
     q: 'What is the average income for the bottom half of Americans?',
@@ -76,7 +76,7 @@ let questions = [
     d: 'Around $15,000 per year',
     answer: 'd',
     answer_text: 'The bottom 117milion Americans are making an average of $16,200 per year before taxes',
-    answer_image: ''
+    answer_image: 'images/income_collapse.jpg'
   }
 ];
 
