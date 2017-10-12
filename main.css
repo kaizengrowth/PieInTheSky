@@ -156,6 +156,10 @@ button {
   content: 'Sorry! You ran out of lives. Try again!';
 }
 
+#alert.highestScore::after {
+  content: 'Congratulations! You have a new high score!';
+}
+
 #restart {
   width: 100px;
   height: 60px;
@@ -166,4 +170,30 @@ button {
   position: absolute;
   margin: 200px 200px;
   display: none;
+}
+
+#score_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#score_container img {
+  /*flex: 1;*/
+  position: absolute;
+  width: 300px;
+  margin: 70px;
+  border-radius: 25px;
+}
+
+#scoreDisplay {
+  flex: 1;
+}
+
+#scoreDisplay h3 {
+  color: yellow;
+}
+
+#game {
+  margin-top: 100px;
+  width: 150px;
 }

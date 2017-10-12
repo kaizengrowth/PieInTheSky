@@ -168,10 +168,11 @@ $(document).ready(function(){
         winGame.play();
         $('#alert').addClass('winGame');
         $('#alert.winGame').css('display', 'block');
-         $('level').remove();
+        $('level').remove();
+        let newScore = window.localStorage.setItem('newScore', score); // Store this score to local storage, to compare for high score.
         clearInterval(animate);
         $('#restart').show().delay(5000).fadeOut(1500, function(){
-          location.reload();
+          location.href = 'end.html';
         });
         $('#restart').click(function(){
           location.reload();
@@ -234,6 +235,7 @@ $(document).ready(function(){
         console.log('break');
         breakBowl.play();
         lives--;
+        score-=2;
         $('#lives').text('Lives: ' + lives);
         clearInterval(animate);
       }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pie in the Sky</title>
+  <link href="https://fonts.googleapis.com/css?family=Julee|Pangolin|Quintessential|Tillana" rel="stylesheet">
+  <link rel = 'stylesheet' type = 'text/css' href='main.css'>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src='velocity.js'></script>
+  <script src='script.js'></script>
+</head>
+  <body>
+
+  <center>
+  <a href='game.html'><img src='images/logo.png' width='400'> <br> <br></a>
+
+  <div id='score_container'
+
+  <a href='index.html'><img src='images/purpleCyclist.png'></a>
+
+    <div id='scoreDisplay'>
+      <h1>Your score:</h1> <h3 id='yourScore'></h3>
+      <h1>High score:</h1> <h3 id='highScore'></h3>
+    </div>
+
+  </div>
+
+  <button type='button' id='game'>Restart</button>
+
+  </center>
+</body>
+
+  <script>
+
+  let newScore = window.localStorage.getItem('newScore');
+  let highScore = window.localStorage.getItem('highScore');
+
+  if ((newScore > highScore) || (highScore == null)) {
+    highScore = newScore;
+    alert('Congratulations! You have a new high score!');
+    $('#alert').addClass('highestScore');
+    $('#alert.correct').css('display', 'block');
+  }
+
+  window.localStorage.setItem('highScore', highScore);
+
+  $('#yourScore').html(newScore);
+  $('#highScore').html(highScore);
+
+  $('#game').click(function(){
+    location.href = 'game.html';
+  });
+
+  </script>
+
+  </body>
+</html>
