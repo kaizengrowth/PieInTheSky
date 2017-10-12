@@ -148,12 +148,22 @@ button {
 
 #alert.correct::after {
   content:'Correct!';
-  font-size: 14px;
 }
 
 #alert.incorrect::after {
   content:'Incorrect!';
-  font-size: 14px;
+}
+
+#alert.nextLevel::after {
+  content: 'You cleared the level!';
+}
+
+#alert.winGame::after {
+  content: 'You win!';
+}
+
+#alert.loseGame::after {
+  content: 'Sorry! You ran out of lives. Try again!';
 }
 
 #questionModal {
@@ -172,4 +182,16 @@ button {
   color: white;
   font-size: 32px;
   opacity: 1;
+}
+
+#restart {
+  width: 100px;
+  height: 60px;
+  background-color: yellow;
+  font-size: 20px;
+  border-radius: 10px;
+  color: black;
+  position: absolute;
+  margin: 200px 200px;
+  display: none;
 }

@@ -39,9 +39,10 @@
 
   <div id = 'bowl'>
     <div id = 'stage'>
+        <button type='button' onclick='restart()' id="restart">Restart</button>
         <div id = 'unicyclist'><img src = 'images/unicyclist.png' alt='unicyclist' height = '150px' width='auto'></div>
     </div>
-  </div>
+    </div>
 
   <div id = 'facts_container'>
     <center>
@@ -53,14 +54,50 @@
     </center>
   </div>
 
-  <audio id="catch" src="audio/catch.mp3" type="audio/mp3"></audio>
+<!-- Audio Files -->
+
+  <audio>
+    <source src='audio/catch.mp3'></source>
+  </audio>
+
+  <audio>
+    <source src='audio/break.mp3'></source>
+  </audio>
+
+  <audio>
+    <source src='audio/correct.mp3'></source>
+  </audio>
+
+  <audio>
+    <source src='audio/wrong.mp3'></source>
+  </audio>
+
+  <audio>
+    <source src='audio/levelup.mp3'></source>
+  </audio>
+
+  <audio>
+    <source src='audio/win.mp3'></source>
+  </audio>
+
+  <audio>
+    <source src='audio/lose.mp3'></source>
+  </audio>
 
   <script>
+  let catchBowl = document.getElementsByTagName("audio")[0];
+  let breakBowl = document.getElementsByTagName("audio")[1];
+  let correctAnswer = document.getElementsByTagName("audio")[2];
+  let wrongAnswer = document.getElementsByTagName("audio")[3];
+  let levelUp = document.getElementsByTagName("audio")[4];
+  let winGame = document.getElementsByTagName("audio")[5];
+  let loseGame = document.getElementsByTagName("audio")[6];
 
   function checkAnswer() {
     console.log($('input[type=radio]:checked').val());
     console.log(questions[qNum].answer);
     if ($('input[type=radio]:checked').val() == questions[qNum].answer) {
+      correctAnswer.play();
       $('#alert').addClass('correct');
       $('#alert.correct').css('display', 'block');
       score +=5;
@@ -68,6 +105,7 @@
       displayAnswer();
     }
     else {
+      wrongAnswer.play();
       $('#alert').addClass('incorrect');
       $('#alert.incorrect').css('display', 'block');
       score -=2;
