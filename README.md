@@ -51,7 +51,12 @@ Play again and again. Beat your last high score!
 4. Beautify all of it -- change clashing styles. Make certain elements more responsive. This is not the most beautifully designed game...
 5. Add more questions, related to each level, with statistic / pie chart or bar/line graph. In the outro, describe my journey of exploring different conflicting social justice approaches through an infographic background image that scrolls in a div (overflow:hidden) with the same purple unicyclist sprite, walking right, and changing the background image position as she does.
 
-#PROPOSAL
+
+---
+
+
+
+# PROPOSAL
 
 *** Kai Zhang / October 6, 2017 *** [Pie in the Sky]
 
