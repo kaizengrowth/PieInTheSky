@@ -3,17 +3,19 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pie in the Sky</title>
- <link href="https://fonts.googleapis.com/css?family=Julee|Pangolin|Quintessential|Tillana" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Julee|Pangolin|Quintessential|Tillana" rel="stylesheet">
   <link rel = 'stylesheet' type = 'text/css' href='main.css'>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script src='velocity.js'></script>
   <script src='script.js'></script>
 </head>
 <body>
-  <h1 id="level"></h1>
+  <h1 id='levelTitle'></h1>
+  <center><h3 id='level'></h3></center>
   <div id = 'points_container'>
     <div id = 'score'></div>
     <div id = 'lives'></div>
+    <div id = 'alert'></div>
   </div>
 
 <main>
@@ -22,15 +24,15 @@
   <center>
     <h2>Question</h2>
     <br>
-    <p>Lorem ipsum dolor sit amet, eam an facete ocurreret similique, summo lobortis expetenda eum ea, his id stet volumus tacimates. </p>
+    <p id='question_text'></p>
     <br>
-    <form>
-      <input type="radio" name="gender" value="male" checked> A <br>
-      <input type="radio" name="gender" value="male" checked> B <br>
-      <input type="radio" name="gender" value="male" checked> C <br>
-      <input type="radio" name="gender" value="male" checked> D <br>
+    <form id = "radio">
+      <input type="radio" id="A" name="q" value="a"><span id="labelA"></span><br>
+      <input type="radio" id="B" name="q" value="b"><span id="labelB"></span><br>
+      <input type="radio" id="C" name="q" value="c"><span id="labelC"></span><br>
+      <input type="radio" id="D" name="q" value="d"><span id="labelD"></span><br>
       <br>
-      <center><button type="submit">Submit</button></center>
+      <center><button type='button' onclick='checkAnswer()'>Enter</button></center>
     </form>
   <center>
   </div>
@@ -45,13 +47,49 @@
     <center>
     <h2>Answer</h2>
     <br>
-    <img src = "https://images.vexels.com/media/users/3/126965/isolated/lists/c80d6f8c23950f00cd7e49d084ce07d8-4-part-christmas-pie-chart.png">
+    <img src = "images/chinese_communism.jpg" width = '250' id="answer_image">
     <br>
-    <p>Lorem ipsum dolor sit amet.
+    <p id="answer_text">This level is about living under Chinese Communism, as compared with living in the U.S.A.<p>
     </center>
   </div>
 
   <audio id="catch" src="audio/catch.mp3" type="audio/mp3"></audio>
+
+  <script>
+
+  function checkAnswer() {
+    console.log($('input[type=radio]:checked').val());
+    console.log(questions[qNum].answer);
+    if ($('input[type=radio]:checked').val() == questions[qNum].answer) {
+      $('#alert').addClass('correct');
+      $('#alert.correct').css('display', 'block');
+      score +=5;
+      qNum ++;
+      displayAnswer();
+    }
+    else {
+      $('#alert').addClass('incorrect');
+      $('#alert.incorrect').css('display', 'block');
+      score -=2;
+      qNum ++;
+      displayAnswer();
+    }
+  };
+
+  function displayAnswer() {
+    document.getElementById('answer_text').innerHTML = questions[qNum - 1].answer_text;
+    let image = document.getElementById('answer_image')
+    image.src = questions[qNum - 1].answer_image;
+    image.width = '200';
+    document.getElementById('score').innerHTML = 'Score: ' + score;
+    document.getElementById('question_text').innerHTML = questions[qNum].q;
+    document.getElementById('labelA').innerHTML = ' A. ' + questions[qNum].a;
+    document.getElementById('labelB').innerHTML = ' B. ' + questions[qNum].b;
+    document.getElementById('labelC').innerHTML = ' C. ' + questions[qNum].c;
+    document.getElementById('labelD').innerHTML = ' D. ' + questions[qNum].d;
+  }
+
+  </script>
 
 </main>
 </body>

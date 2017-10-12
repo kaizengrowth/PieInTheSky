@@ -29,22 +29,31 @@ h1 {
 
 #score, #lives {
   color: yellow;
+  font-family: 'Pangolin', cursive;
 }
 
 #questions_container {
   flex: 1;
   width: 300px;
-  height: 350px;
+  height: auto;
   background-color: #fc3ea4;
   margin: 25px;
   padding: 20px;
-  border: 1px dotted black;
+  border: 1px dotted darkblue;
   border-radius: 25px;
   color: white;
 }
 
 #questions_container p {
   font-family: 'Pangolin', cursive;
+}
+
+#radio {
+  font-family: 'Pangolin', cursive;
+}
+
+#A:hover, #B:hover, #C:hover, #D:hover {
+  background-color: yellow;
 }
 
 #bowl {
@@ -67,6 +76,13 @@ h1 {
   position: relative;
   flex: 1.5;
 }
+
+/*#stage::after {
+  content: 'Move #1. Peoples Republic of China → United States of America';
+  padding: 10px;
+  text-align: center;
+  color: black;
+}*/
 
 #unicyclist {
   width: 50px;
@@ -96,7 +112,7 @@ button {
   width: 60px;
   height: 45px;
   background-color: yellow;
-  font-size: 13px;
+  font-size: 16px;
   border-radius: 10px;
   color: black;
   position: absolute;
@@ -106,12 +122,34 @@ button {
 #facts_container {
   flex: 1;
   width: 300px;
-  height: 350px;
-  background-color: #17c62f;
+  height: auto;
+  background-color: #4fa600;
   margin: 25px;
   border: 1px dotted white;
   border-radius: 25px;
   color: white;
   padding: 20px;
+}
+
+#facts_container p {
   font-family: 'Pangolin', cursive;
+}
+
+#alert {
+  margin-top: 20px;
+  height: 30px;
+  width: 100vw;
+  background-color: #831cb7;
+  color: white;
+  display: none;
+}
+
+#alert.correct::after {
+  content:'Correct!';
+  font-size: 14px;
+}
+
+#alert.incorrect::after {
+  content:'Incorrect!';
+  font-size: 14px;
 }

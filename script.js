@@ -1,18 +1,55 @@
-//******** Game Data ********//
-let state = {
-  unicyclist: {
-    x: 0,
-    height: 20
-  }
-}
-
+//******** Game State ********//
 let plates = new Array(10);
 let plateInterval = 5000;
-
 let score = 0;
 let lives = 10;
 let level = 1;
 let levelCounter = 0;
+let qNum = 0;
+let lNum = 0;
+let colors = ['#17c62f', '#fc3ea4', '#fbfd35', '#2982FA'];
+
+//******** Levels ********//
+
+let levels = [
+  l1 = {
+    title: 'China to USA',
+    background: 'images/level1.jpg',
+    modal: ''
+  },
+  l2 = {
+
+  },
+  l3 = {
+
+  },
+  l4 = {
+
+  }
+]
+
+//******** Questions ********//
+
+let questions = [
+  q1 = {
+    q: 'What color is made with yellow plus blue?',
+    a: 'red',
+    b: 'orange',
+    c: 'green',
+    d: 'violet',
+    answer: 'c',
+    answer_text: 'The answer is green.',
+    answer_image: 'images/plate.png',
+  },
+  q2 = {
+    q: 'What color is made with red plus blue?',
+    a: 'oh',
+    b: 'my',
+    c: 'f',
+    d: 'god',
+    answer: 'c'
+  }
+];
 
 //******** Keyboard Controller ********//
 
@@ -40,13 +77,17 @@ $(document).ready(function(){
       case(39):
         right();
         break;
-      default:
+      // case(35):  //Trying to focus on a radio button with a key event.
+      //   a();
+      //   break;
+      // default:
         // alert('Press arrow keys to move unicycle juggler.');
     }
   });
 
   //******** Display Game Stats ********//
 
+  $('#levelTitle').text(levels[lNum].title);
   $('#level').text('Level ' + level);
   $('#score').text('Score: ' + score);
   $('#lives').text('Lives: ' + lives);
@@ -79,14 +120,16 @@ $(document).ready(function(){
       // Check if the score is below the number required to go on to next level.
       // If the score is high enough to clear the level, then remove plates from
       //stage and transition to the next level.
-      if (levelCounter >= 5) {
+      if (levelCounter >= 7) {
         level++;
+        lives+=2;
         levelCounter = 0;
         plateInterval -= 1000; //Speed up the rate of falling plates in next level.
         $('.plates').remove();
         alert('next Level');
-        $('#level').text('Level: ' + level);
-        $('#unicyclist').css('height', (parseInt($('#unicyclist').css('height', '100px'))));
+        $('#level').text('Level ' + level);
+        $('#lives').text('Lives: ' + lives);
+        $('#unicyclist').css('height', (parseInt($('#unicyclist').css('height', '150px'))));
         clearInterval(animate);
       }
       else if (lives <= 0) {
@@ -115,7 +158,7 @@ $(document).ready(function(){
       else {
         console.log('no');
         newPlate.velocity({
-          top: '+= 20px'
+          top: '+= 20px'  // The plate moves down by 18px if there is no collision.
         }, 'linear');
       }
     }, 200);
@@ -128,9 +171,33 @@ $(document).ready(function(){
     console.log(x);
   };
 
-  setInterval(newPlate, plateInterval);
+  // setInterval(newPlate, plateInterval);
+
+  //******** Questions SideBar ********//
+
+$('#question_text').text(questions[qNum].q);
+$('#labelA').text(' A. ' + questions[qNum].a);
+$('#labelB').text(' B. ' + questions[qNum].b);
+$('#labelC').text(' C. ' + questions[qNum].c);
+$('#labelD').text(' D. ' + questions[qNum].d);
 
 });
+
+let radioButtons = document.getElementsByName('q');
+  let switchChecked;
+  let i = 0;
+  for(i = 0; i < radioButtons.length; i++){
+    radioButtons[i].onclick = function() {
+      if(switchChecked == this){
+          this.checked = false;
+          switchChecked = null;
+      } else{
+          switchChecked = this;
+      }
+    };
+  }
+
+
 
 
 
