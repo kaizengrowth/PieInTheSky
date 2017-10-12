@@ -37,7 +37,7 @@ h1 {
 #questions_container {
   flex: 1;
   width: 300px;
-  height: auto;
+  height: 350px;
   background-color: #fc3ea4;
   margin: 25px;
   padding: 20px;
@@ -79,18 +79,10 @@ h1 {
   flex: 1.5;
 }
 
-/*#stage::after {
-  content: 'Move #1. Peoples Republic of China → United States of America';
-  padding: 10px;
-  text-align: center;
-  color: black;
-}*/
-
 #unicyclist {
   width: 50px;
   height: 150px;
   bottom: 0;
-  /*background-color: green;*/
   position: absolute;
   left: 200px;
   overflow: hidden;
@@ -125,7 +117,7 @@ button {
   flex: 1;
   width: 300px;
   height: auto;
-  background-color: #4fa600;
+  background-color: #5EC46A;
   margin: 25px;
   border: 1px dotted white;
   border-radius: 25px;

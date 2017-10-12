@@ -106,6 +106,8 @@
       qNum ++;
       $('#rightAnswers').text('Answers: ' + rightAnswers);
       displayAnswer();
+      // let nextColor = nextColor();
+      // $('#question_container').css('background-color', 'nextColor')
     }
     else {
       wrongAnswer.play();
@@ -123,6 +125,10 @@
     image.src = questions[qNum - 1].answer_image;
     image.width = '200';
     document.getElementById('score').innerHTML = 'Score: ' + score;
+    displayNextQuestion();
+  };
+
+  function displayNextQuestion() {
     document.getElementById('question_text').innerHTML = questions[qNum].q;
     document.getElementById('labelA').innerHTML = ' A. ' + questions[qNum].a;
     document.getElementById('labelB').innerHTML = ' B. ' + questions[qNum].b;

@@ -8,24 +8,30 @@ let level = 1;
 let levelCounter = 0;
 let qNum = 0;
 let lNum = 0;
-let colors = ['#17c62f', '#fc3ea4', '#fbfd35', '#2982FA'];
+let colors = ['#5EC46A', //green
+              '#fc3ea4', //pink
+              '#fbfd35', //yellow
+               '#2982FA']; //blue
 
 //******** Levels ********//
 
 let levels = [
   l1 = {
-    title: 'China to USA',
+    title: 'From China to USA',
     background: 'images/level1.jpg',
     modal: ''
   },
   l2 = {
-
+    title: 'From Colorado Trailer Park to NYCHA Projects',
+    background: 'images/level2.jpg',
   },
   l3 = {
-
+    title: 'From South Bronx Public School to Riverdale Private School',
+    background: 'images/level3.jpg',
   },
   l4 = {
-
+    title: 'From Home to Travelling the World',
+    background: 'images/level4.jpg',
   }
 ]
 
@@ -33,22 +39,44 @@ let levels = [
 
 let questions = [
   q1 = {
-    q: 'What color is made with yellow plus blue?',
-    a: 'red',
-    b: 'orange',
-    c: 'green',
-    d: 'violet',
-    answer: 'c',
-    answer_text: 'The answer is green.',
+    q: 'Which country has a higher poverty rate - USA or China?',
+    a: 'USA has a higher poverty rate.',
+    b: 'China has a higer poverty rate.',
+    c: 'Both countries have about equal percentage of population living in poverty.',
+    d: 'Neither country has any people living in poverty.',
+    answer: 'a',
+    answer_text: 'U.S. has higher poverty rate (15.1%) than China (13.4% povery rate)',
     answer_image: 'images/plate.png',
   },
   q2 = {
-    q: 'What color is made with red plus blue?',
-    a: 'oh',
-    b: 'my',
-    c: 'f',
-    d: 'god',
-    answer: 'c'
+    q: 'Which country has a higher rate of population growth?',
+    a: 'USA',
+    b: 'China',
+    c: 'Both are the same',
+    d: 'Impossible to tell',
+    answer: 'a',
+    answer_text: "U.S. has a higher population growth rate (0.899%) than China (0.481%)",
+    answer_image: ''
+  },
+  q3 = {
+    q: 'Which country has a higher rate of inequality?',
+    a: 'China',
+    b: 'USA',
+    c: 'Both are the same',
+    d: 'Impossible to tell',
+    answer: 'b',
+    answer_text: 'USA has a higher rate of inequality than China. However, the income of the bottom 50% in the U.S. have stagnated and even went down in the US since 1978, whereas in China, the bottom half are experiencing 400% income growth.',
+    answer_image: ''
+  },
+  q4 = {
+    q: 'What is the average income for the bottom half of Americans?',
+    a: 'Around $50,000 per year',
+    b: 'Around $35,000 per year',
+    c: 'Around $25,000 per year',
+    d: 'Around $15,000 per year',
+    answer: 'd',
+    answer_text: 'The bottom 117milion Americans are making an average of $16,200 per year before taxes',
+    answer_image: ''
   }
 ];
 
@@ -137,12 +165,12 @@ $(document).ready(function(){
       // If the score is high enough to clear the level, then remove plates from
       //stage and transition to the next level.
       if (level > 4) {
-        $('level').detach();
-        clearInterval(animate);
         winGame.play();
         $('#alert').addClass('winGame');
         $('#alert.winGame').css('display', 'block');
-        $('#restart').show().delay(2000).fadeOut(1500, function(){
+         $('level').remove();
+        clearInterval(animate);
+        $('#restart').show().delay(5000).fadeOut(1500, function(){
           location.reload();
         });
         $('#restart').click(function(){
@@ -154,6 +182,7 @@ $(document).ready(function(){
 
       else if ((levelCounter >= 7) && (level <= 4)) {
         level++;
+        lNum++;
         lives+=2;
         levelCounter = 0;
         plateInterval -= 1000; //Speed up the rate of falling plates in next level.
@@ -162,6 +191,7 @@ $(document).ready(function(){
         $('#alert.nextLevel').css('display', 'block');
         $('.plates').remove();
         $('#level').text('Level ' + level);
+        $('#levelTitle').text(levels[lNum].title);
         $('#lives').text('Lives: ' + lives);
         $('#unicyclist').css('height', (parseInt($('#unicyclist').css('height', '150px'))));
         clearInterval(animate);
@@ -176,7 +206,7 @@ $(document).ready(function(){
         loseGame.play();
         $('#alert').addClass('loseGame');
         $('#alert.loseGame').css('display', 'block');
-        $('#restart').show().delay(5000).fadeOut(1500, function(){
+        $('#restart').show().delay(3000).fadeOut(1500, function(){
           location.reload();
         });
         $('#restart').click(function(){
@@ -225,6 +255,18 @@ $(document).ready(function(){
   setInterval(newPlate, plateInterval);
 
   //******** Questions SideBar ********//
+
+function nextColor() {
+  for(i in colors) {
+    if (i == 3) {
+      i = 0;
+    }
+    else {
+      i++;
+    }
+    return colors[i];
+  }
+}
 
 $('#question_text').text(questions[qNum].q);
 $('#labelA').text(' A. ' + questions[qNum].a);
