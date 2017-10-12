@@ -12,7 +12,15 @@ Initial thoughts on game structure Collision detection on plates trigger target 
 
 Sometimes you catch a sparkling plate called “optimism b.s.” which is a fake dish full of dangerous fake glow that can explode in your face and smear the screen with crap. You have to “wash the dish” by answering a question to convert it to balanced analysis.
 
-Backgrounds: Level One:	Cross from China to America (Communism vs. Capitalism) Plates = stars on flag (5 stars → 50 stars) Level Two:	Trailer park in Colorado to NYCHA projects in New York City (Middle America vs. East Coast / suburban vs. urban poverty) Plates = states in between driving from Colorado to New York Level Three:	South Bronx public school to Riverdale private prep school (Educational inequality in NYC) Plates = 14 months of Prep for Prep Level Four:	Earth Institute (Columbia) to working in Guatemala Confused by different approaches to global justice:
+Backgrounds: 
+
+Level One:	Cross from China to America (Communism vs. Capitalism) Plates = stars on flag (5 stars → 50 stars) 
+
+Level Two:	Trailer park in Colorado to NYCHA projects in New York City (Middle America vs. East Coast / suburban vs. urban poverty) Plates = states in between driving from Colorado to New York 
+
+Level Three:	South Bronx public school to Riverdale private prep school (Educational inequality in NYC) Plates = 14 months of Prep for Prep 
+
+Level Four:	Earth Institute (Columbia) to working in Guatemala Confused by different approaches to global justice:
 
 PLATES -- Optimism & cyncism dirty dishes; confused by different approaches to global justice:
 
