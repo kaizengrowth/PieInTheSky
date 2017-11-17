@@ -1,6 +1,8 @@
 # UnicycleGame
 
-What is [Pie in the Sky]? A game that simulates the balancing act of juggling plates while riding a unicycle! Can you answer trivia questions at the same time as catching plates? (Collision detection, yay!) 
+### What is Pie in the Sky? 
+
+A game that simulates the balancing act of juggling plates while riding a unicycle! Can you answer trivia questions at the same time as catching plates? (Collision detection, yay!) 
 
 The player goes through multiple stages, migrating from location to location. Trivia questions reveal statistics about inequality pop up on each stage every time a plate is caught. This educational game teaches about labor, migration, inequality, and conflicting approaches to social justice that must be “juggled.”
 
