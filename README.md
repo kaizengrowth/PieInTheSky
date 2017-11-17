@@ -6,7 +6,7 @@ A game that simulates the balancing act of juggling plates while riding a unicyc
 
 The player goes through multiple stages, migrating from location to location. Trivia questions that reveal statistics about inequality pop up on each stage, every time a plate is caught. This educational game teaches about labor, migration, inequality, and conflicting approaches to social justice that must be “juggled.”
 
-In Chinese, the word bowl: 飯碗 -- also means your job, or your way of making a living. Circus is a hard way of making a living. What is your bowl or living? How much of the economic pie are you getting? How were some ideas of Communism "pie in the sky"? 
+In Chinese, the words for rice bowl: 飯碗 -- also means your job, or your way of making a living. Circus is a hard way of making a living. What is your bowl or living? How much are you juggling on your plate? How much of the economic pie are you getting? How were some ideas of Communism "pie in the sky"? 
 
 So many puns, and so much fun! Play here: https://kaizenagility.github.io/PieInTheSky/
 
