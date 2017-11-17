@@ -1,8 +1,17 @@
 # UnicycleGame
 
-What is [Pie in the Sky]? A basic game of juggling plates while riding a unicycle. The player goes through multiple stages, migrating from location to location. Statistics about inequality (how much of the pie!) pop up on each stage every time a plate is caught. This educational game teaches about labor, migration, inequality, and conflicting approaches to social justice that must be “juggled.”
+What is [Pie in the Sky]? A game that simulates the balancing act of juggling plates while riding a unicycle! Can you answer trivia questions at the same time as catching plates? (Collision detection, yay!) 
 
-This game doubles as a portfolio item, for my “About Me” page. Inspired by Robby Leonardi’s infamous portfolio: http://www.rleonardi.com/interactive-resume/
+The player goes through multiple stages, migrating from location to location. Trivia questions reveal statistics about inequality pop up on each stage every time a plate is caught. This educational game teaches about labor, migration, inequality, and conflicting approaches to social justice that must be “juggled.”
+
+In Chinese the word bowl: 飯碗 -- also means your job, or your way of making a living. Circus is a hard way of making a living. What is your bowl or living? How much of the economic pie are you getting? How were some ideas of Communism "pie in the sky"? So many puns, and so much fun! Play here: https://kaizenagility.github.io/PieInTheSky/
+
+![Screenshot of Game](https://github.com/kaizenagility/PieInTheSky/blob/master/Screen%20Shot%202017-11-16%20at%207.25.09%20PM.png "Screenshot of game")
+
+Here was the grade and feedback I received on this very first project at General Assembly: https://github.com/kaizenagility/PieInTheSky/blob/master/kai.md
+I received a score of 12.5 out of 10, with bonus points for extra credit.
+
+
 
 
 ## /// === **Explanations of the technologies used** === ///
