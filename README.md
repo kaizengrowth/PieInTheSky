@@ -8,7 +8,7 @@ The player goes through multiple stages, migrating from location to location. Tr
 
 In Chinese, the words for rice bowl: 飯碗 -- also means your job, or your way of making a living. Circus is a hard way of making a living. What is your bowl or living? How much are you juggling on your plate? How much of the economic pie are you getting? How were some ideas of Communism "pie in the sky"? 
 
-So many puns, and so much fun! Play here: https://kaizenagility.github.io/PieInTheSky/
+So many puns, and so much fun! Play here: https://kaizengrowth.github.io/PieInTheSky/
 
 ![Screenshot of Game](https://github.com/kaizenagility/PieInTheSky/blob/master/Screen%20Shot%202017-11-16%20at%207.25.09%20PM.png "Screenshot of game")
 
